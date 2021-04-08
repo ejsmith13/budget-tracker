@@ -27,14 +27,16 @@
   ## Description:
 
 
-  This is a simple budget app that allows the user to track credited and debited funds in an account. Users are able to download the applcation and use it with or without an internet connection. If information is added without a connection, that information is stored and uploaded as soon as a connection is made.
+  This is a simple budgeting application that allows the user to track credited and debited funds in an account. Users are able to download the app from thier browser and use it with or without an internet connection. If information is added without a connection, that information is stored and uploaded as soon as a connection is made.
 
 
   
 --------------------------------------
 
   ## Screenshots:
+[Deployed Site](https://guarded-refuge-55649.herokuapp.com/)
 
+![Screenshot of site](/public/images/screenshot_budget.png)
 
   
 
@@ -62,7 +64,7 @@
   ## Usage:
 
 
-  Feel free to use this project.
+  Anyone is free to use this project. 
 
 
   
@@ -71,7 +73,7 @@
   ## Contributing:
 
 
-  Feel free to contribute. Please use github best practices when contributing.
+  Contributions are always welcome. Please use github best practices when contributing.
 
 
   
