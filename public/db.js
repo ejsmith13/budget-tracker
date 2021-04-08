@@ -1,7 +1,7 @@
 let db;
 
 const request = indexedDB.open("budget", 1);
-
+// starts indexedDB, opens budget and creates objectStore "pending"
 request.onupgradeneeded = function (e) {
   const db = e.target.result;
   db.createObjectStore("pending", { autoIncrement: true });
@@ -19,6 +19,7 @@ request.onerror = function (e) {
   console.log(`Error: ${e.target.errorCode}`);
 };
 
+// saves transaction to pending if offline.
 const saveRecord = (record) => {
   const transaction = db.transaction(["pending"], "readwrite");
 
@@ -27,6 +28,7 @@ const saveRecord = (record) => {
   store.add(record);
 };
 
+// checks budget database and gets all records. If any info is saved bc it has been offline, then dumps that info in bulk transaction. 
 const checkDatabase = () => {
   const transaction = db.transaction(["pending"], "readwrite");
 
@@ -45,14 +47,10 @@ const checkDatabase = () => {
         },
       })
         .then((response) => response.json())
+        // clear out store
         .then(() => {
-          // if successful, open a transaction on your pending db
           const transaction = db.transaction(["pending"], "readwrite");
-
-          // access your pending object store
           const store = transaction.objectStore("pending");
-
-          // clear all items in your store
           store.clear();
         });
     }

@@ -84,7 +84,7 @@
   For this project I used:
 
 
-   HTML, CSS, JavaScript, Bootstrap, Heroku, NodeJS
+   HTML, CSS, JavaScript, Bootstrap, Heroku, NodeJS, MongoDB, Mongoose
 
   
   
